@@ -8,8 +8,8 @@ public class Main {
         taskManager.addSimpleTask(simpleTask1);
         taskManager.addSimpleTask(simpleTask2);
 
-        Epic epic1 = new Epic("Разработка ПД", "Разработать 20 разделов ПД", Status.NEW);
-        Epic epic2 = new Epic("Разработка РД", "Разработать 20 разделов РД", Status.NEW);
+        Epic epic1 = new Epic("Разработка ПД", "Разработать 20 разделов ПД");
+        Epic epic2 = new Epic("Разработка РД", "Разработать 20 разделов РД");
 
         taskManager.addEpic(epic1);
         taskManager.addEpic(epic2);

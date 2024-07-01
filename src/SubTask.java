@@ -1,10 +1,14 @@
 public class SubTask extends Task {
 
-    int colID;
+    private int colID;
 
     public SubTask(String title, String description, Status taskStatus, int colID) {
         super(title, description, taskStatus);
         this.colID = colID;
+    }
+
+    public int getColID() {
+        return colID;
     }
 
     @Override
