@@ -1,3 +1,7 @@
+package Tasks;
+
+import Management.*;
+
 public class SubTask extends Task {
 
     private int colID;
@@ -13,7 +17,7 @@ public class SubTask extends Task {
 
     @Override
     public String toString() {
-        return "SubTask{" +
+        return "Tasks.SubTask{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +

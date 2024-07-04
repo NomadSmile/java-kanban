@@ -1,3 +1,7 @@
+package Tasks;
+
+import Management.*;
+
 public class SimpleTask extends Task {
 
     public SimpleTask(String title, String description, Status taskStatus) {
@@ -6,7 +10,7 @@ public class SimpleTask extends Task {
 
     @Override
     public String toString() {
-        return "SimpleTask{" +
+        return "Tasks.SimpleTask{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +

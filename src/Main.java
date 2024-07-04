@@ -1,3 +1,8 @@
+import Management.Status;
+import Management.TaskManager;
+import Tasks.*;
+import Management.*;
+
 public class Main {
     public static void main(String[] args) {
         TaskManager taskManager = new TaskManager();
@@ -14,9 +19,9 @@ public class Main {
         taskManager.addEpic(epic1);
         taskManager.addEpic(epic2);
 
-        SubTask subTask1 = new SubTask("Книга 1 ПД", "Разработка книги 1 ПД", Status.NEW, epic1.id);
-        SubTask subTask2 = new SubTask("Книга 2 ПД", "Разработка книги 2 ПД", Status.NEW, epic1.id);
-        SubTask subTask3 = new SubTask("Книга 1 РД", "Разработка книги 1 РД", Status.NEW, epic2.id);
+        SubTask subTask1 = new SubTask("Книга 1 ПД", "Разработка книги 1 ПД", Status.NEW, epic1.getId());
+        SubTask subTask2 = new SubTask("Книга 2 ПД", "Разработка книги 2 ПД", Status.NEW, epic1.getId());
+        SubTask subTask3 = new SubTask("Книга 1 РД", "Разработка книги 1 РД", Status.NEW, epic2.getId());
 
         taskManager.addSubTask(subTask1);
         taskManager.addSubTask(subTask2);
@@ -29,12 +34,12 @@ public class Main {
         System.out.println(taskManager.getSubTasks());
         System.out.println(" ");
 
-        simpleTask1.taskStatus = Status.IN_PROGRESS;
-        simpleTask2.taskStatus = Status.IN_PROGRESS;
+        simpleTask1.setTaskStatus(Status.IN_PROGRESS);
+        simpleTask2.setTaskStatus(Status.IN_PROGRESS);
 
-        subTask1.taskStatus = Status.DONE;
-        subTask2.taskStatus = Status.DONE;
-        subTask3.taskStatus = Status.IN_PROGRESS;
+        subTask1.setTaskStatus(Status.DONE);
+        subTask2.setTaskStatus(Status.DONE);
+        subTask3.setTaskStatus(Status.IN_PROGRESS);
 
         taskManager.updateSimpleTask(simpleTask1);
         taskManager.updateSimpleTask(simpleTask2);
