@@ -1,7 +1,6 @@
-import Management.Status;
-import Management.TaskManager;
-import Tasks.*;
-import Management.*;
+import tasks.Status;
+import management.TaskManager;
+import tasks.*;
 
 public class Main {
     public static void main(String[] args) {

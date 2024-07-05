@@ -1,6 +1,4 @@
-package Tasks;
-
-import Management.*;
+package tasks;
 
 public class SubTask extends Task {
 

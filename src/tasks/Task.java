@@ -1,7 +1,6 @@
-package Tasks;
+package tasks;
 
 import java.util.Objects;
-import Management.*;
 
 public class Task {
     protected int id;

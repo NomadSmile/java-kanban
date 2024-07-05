@@ -1,8 +1,8 @@
-package Management;
+package management;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import Tasks.*;
+import tasks.*;
 
 public class TaskManager {
 
@@ -73,8 +73,8 @@ public class TaskManager {
     public void updateEpic(Epic epic) {
 
         if(epics.containsKey(epic.getId())) {
-            epic.setTitle(epics.get(epic.getId()).getTitle());
-            epic.setDescription(epics.get(epic.getId()).getDescription());
+            epics.get(epic.getId()).setTitle(epic.getTitle());
+            epics.get(epic.getId()).setDescription(epic.getDescription());
         } else {
             System.out.println("Вы пытаетесь обновить Эпик, отсутствующий в списке.");
         }
@@ -82,7 +82,7 @@ public class TaskManager {
 
     public void updateSubTask(SubTask subTask) {
 
-        if (!subTasks.containsKey(subTask.getId())) {
+        if (subTasks.containsKey(subTask.getId())) { // добавил "!" потому что олень невнимательный
             SubTask existingSubTask = subTasks.get(subTask.getId());
             if (existingSubTask.getColID() == subTask.getColID()) {
                 subTasks.put(subTask.getId(), subTask);
