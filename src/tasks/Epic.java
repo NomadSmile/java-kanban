@@ -1,5 +1,7 @@
 package tasks;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 
 public class Epic extends Task {
@@ -19,7 +21,11 @@ public class Epic extends Task {
     }
 
     public void addSubID(Integer id) {
-        subIDs.add(id);
+        if (id != this.id) {
+            subIDs.add(id);
+        } else {
+            System.out.println("Вы пытаетесь добавить Эпик в список его собственных подзадач.");
+        }
     }
 
     public ArrayList<Integer> getSubIDs() {
