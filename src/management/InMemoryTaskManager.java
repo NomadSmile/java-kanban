@@ -21,11 +21,11 @@ public class InMemoryTaskManager implements TaskManager {
     private Map<Integer, SimpleTask> simpleTasks = new HashMap<>();
     private Map<Integer, Epic> epics = new HashMap<>();
     private Map<Integer, SubTask> subTasks = new HashMap<>();
+    private HistoryManager historyManager = Managers.getDefaultHistory();;
 
     // Прошу прощения, не уверен, что понял комментарий
     @Override
     public List<Task> getTaskHistory() {
-        HistoryManager historyManager = Managers.getDefaultHistory();
         return historyManager.getHistory();
     }
 
@@ -166,19 +166,19 @@ public class InMemoryTaskManager implements TaskManager {
     // Группа методов получения задач по ID
     @Override
     public SimpleTask getSimpleTaskByID(Integer id) {
-        Managers.getDefaultHistory().add(simpleTasks.get(id));
+        historyManager.add(simpleTasks.get(id));
         return simpleTasks.get(id);
     }
 
     @Override
     public Epic getEpicByID(Integer id) {
-        Managers.getDefaultHistory().add(epics.get(id));
+        historyManager.add(epics.get(id));
         return epics.get(id);
     }
 
     @Override
     public SubTask getSubTaskByID(Integer id) {
-        Managers.getDefaultHistory().add(subTasks.get(id));
+        historyManager.add(subTasks.get(id));
         return subTasks.get(id);
     }
 

@@ -3,10 +3,11 @@ package management;
 import tasks.Task;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class InMemoryHistoryManager implements HistoryManager {
 
-    private ArrayList<Task> taskHistory = new ArrayList<>();
+    private List<Task> taskHistory = new ArrayList<>();
 
     @Override
     public void add(Task task) {
@@ -19,7 +20,7 @@ public class InMemoryHistoryManager implements HistoryManager {
     // Сначала нас просят занести этот метод в TaskManager, затем, вроде бы, нужно перенести его сюда.
     // Но это не точно.
     @Override
-    public ArrayList<Task> getHistory() {
+    public List<Task> getHistory() {
         return taskHistory;
     }
 }
