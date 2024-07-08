@@ -7,13 +7,6 @@ import java.util.Map;
 
 import tasks.*;
 
-/*
-Созданный ранее класс менеджера нужно переименовать в InMemoryTaskManager. Именно то, что менеджер хранит
-всю информацию в оперативной памяти, и есть его главное свойство, позволяющее эффективно управлять задачами.
-Внутри класса должна остаться реализация методов. При этом важно не забыть имплементировать TaskManager,
-ведь в Java класс должен явно заявить, что он подходит под требования интерфейса.
- */
-
 public class InMemoryTaskManager implements TaskManager {
 
     private int nextID = 1;
@@ -21,9 +14,8 @@ public class InMemoryTaskManager implements TaskManager {
     private Map<Integer, SimpleTask> simpleTasks = new HashMap<>();
     private Map<Integer, Epic> epics = new HashMap<>();
     private Map<Integer, SubTask> subTasks = new HashMap<>();
-    private HistoryManager historyManager = Managers.getDefaultHistory();;
+    private HistoryManager historyManager = Managers.getDefaultHistory();
 
-    // Прошу прощения, не уверен, что понял комментарий
     @Override
     public List<Task> getTaskHistory() {
         return historyManager.getHistory();
