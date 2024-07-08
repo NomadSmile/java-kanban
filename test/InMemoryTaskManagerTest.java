@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import tasks.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -173,7 +174,7 @@ public class InMemoryTaskManagerTest {
         historyManager.add(originalTask);
 
         // Получаем историю задач
-        ArrayList<Task> history = historyManager.getHistory();
+        List<Task> history = historyManager.getHistory();
 
         // Проверяем, что история содержит две версии задачи
         assertEquals(2, history.size());

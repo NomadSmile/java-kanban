@@ -3,6 +3,7 @@ package management;
 import tasks.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*
 Класс TaskManager станет интерфейсом. В нём нужно собрать список методов, которые должны быть у любого
@@ -10,6 +11,8 @@ import java.util.ArrayList;
  */
 
 public interface TaskManager {
+
+    List<Task> getTaskHistory();
 
     // Группа методов по добавлению задач
     void addSimpleTask(SimpleTask simpleTask);
@@ -26,11 +29,11 @@ public interface TaskManager {
     void updateSubTask(SubTask subTask);
 
     // Группа методов по получению всех задач
-    ArrayList<SimpleTask> getSimpleTasks();
+    List<SimpleTask> getSimpleTasks();
 
-    ArrayList<Epic> getEpics();
+    List<Epic> getEpics();
 
-    ArrayList<SubTask> getSubTasks();
+    List<SubTask> getSubTasks();
 
     // Группа методов по удалению всех задач
     void cleanSimpleTasks();
@@ -54,6 +57,6 @@ public interface TaskManager {
     void removeSubTaskByID(Integer id);
 
     // Получение списка всех подзадач определённого эпика
-    ArrayList<SubTask> getSubsFromEpic(Integer id);
+    List<SubTask> getSubsFromEpic(Integer id);
 
 }

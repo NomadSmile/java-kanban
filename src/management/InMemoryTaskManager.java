@@ -2,6 +2,9 @@ package management;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import tasks.*;
 
 /*
@@ -15,18 +18,15 @@ public class InMemoryTaskManager implements TaskManager {
 
     private int nextID = 1;
 
-    private HashMap<Integer, SimpleTask> simpleTasks = new HashMap<>();
-    private HashMap<Integer, Epic> epics = new HashMap<>();
-    private HashMap<Integer, SubTask> subTasks = new HashMap<>();
+    private Map<Integer, SimpleTask> simpleTasks = new HashMap<>();
+    private Map<Integer, Epic> epics = new HashMap<>();
+    private Map<Integer, SubTask> subTasks = new HashMap<>();
 
-
-    /*
-    Проверьте, что теперь InMemoryTaskManager обращается к менеджеру истории через интерфейс HistoryManager
-    и использует реализацию, которую возвращает метод getDefaultHistory.
-     */
-    // ТЗ меня победило. Либо я не так всё прочитал, либо это надмозг избыточный
-    public static ArrayList<Task> getTaskHistory() {
-        return Managers.getDefaultHistory().getHistory();
+    // Прошу прощения, не уверен, что понял комментарий
+    @Override
+    public List<Task> getTaskHistory() {
+        HistoryManager historyManager = Managers.getDefaultHistory();
+        return historyManager.getHistory();
     }
 
     // Группа методов по добавлению задач

@@ -8,14 +8,12 @@ public class InMemoryHistoryManager implements HistoryManager {
 
     private ArrayList<Task> taskHistory = new ArrayList<>();
 
-    // реализация именно такая ввиду моего понимания одного из запрашиваемых тестов в ТЗ
     @Override
     public void add(Task task) {
         if (taskHistory.size() == 10) {
-            taskHistory.remove(0);
+            taskHistory.remove(0); // эксперементировал с тестами, нужно было, чтобы ссылки были разныые
         }
-        Task checkedTask = new Task (task.getTitle(), task.getDescription(), task.getTaskStatus());
-        taskHistory.add(checkedTask);
+        taskHistory.add(task);
     }
 
     // Сначала нас просят занести этот метод в TaskManager, затем, вроде бы, нужно перенести его сюда.
